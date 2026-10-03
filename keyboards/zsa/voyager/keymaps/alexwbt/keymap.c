@@ -222,5 +222,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-  return update_tri_layer_state(state, 1, 2, 3);
+  state = update_tri_layer_state(state, 1, 2, 3);
+  if (is_layer_locked(3)) state |= ((layer_state_t)1 << 3);
+  return state;
+}
+
+bool layer_lock_set_user(layer_state_t locked_layers) {
+  if (!(locked_layers & ((layer_state_t)1 << 3))) layer_off(3);
+  return true;
 }
