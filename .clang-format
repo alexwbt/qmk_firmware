@@ -1,30 +1,100 @@
----
-BasedOnStyle: Google
-AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: 'true'
-AlignConsecutiveDeclarations: 'true'
-AlignOperands: 'true'
-AllowAllParametersOfDeclarationOnNextLine: 'false'
-AllowShortCaseLabelsOnASingleLine: 'false'
-AllowShortFunctionsOnASingleLine: Empty
-AllowShortLoopsOnASingleLine: 'false'
-AlwaysBreakAfterDefinitionReturnType: None
-AlwaysBreakAfterReturnType: None
-AlwaysBreakBeforeMultilineStrings: 'false'
-BinPackArguments: 'true'
-BinPackParameters: 'true'
-ColumnLimit: '1000'
-IndentCaseLabels: 'true'
-IndentPPDirectives: AfterHash
-IndentWidth: '4'
-MaxEmptyLinesToKeep: '1'
-PointerAlignment: Right
-SortIncludes: 'false'
-SpaceBeforeAssignmentOperators: 'true'
-SpaceBeforeParens: ControlStatements
-SpaceInEmptyParentheses: 'false'
-SpacesBeforeTrailingComments: 1
-TabWidth: '4'
-UseTab: Never
+#
+# Base style
+#
+BasedOnStyle: LLVM
 
-...
+#
+# Column / line length
+#
+ColumnLimit: 80
+InsertNewlineAtEOF: true
+
+#
+# Line endings
+#
+LineEnding: LF
+
+#
+# Indentation
+#
+IndentWidth: 2
+TabWidth: 2
+UseTab: Never
+ContinuationIndentWidth: 2
+PPIndentWidth: 2
+ObjCBlockIndentWidth: 2
+BracedInitializerIndentWidth: 2
+ConstructorInitializerIndentWidth: 2
+LambdaBodyIndentation: Signature
+NamespaceIndentation: None
+CompactNamespaces: false
+IndentCaseLabels: false
+IndentCaseBlocks: false
+IndentPPDirectives: BeforeHash
+
+#
+# Pointers
+#
+PointerAlignment: Left
+DerivePointerAlignment: false
+
+#
+# Short constructs on a single line
+#
+AllowShortBlocksOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortLambdasOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortCaseExpressionOnASingleLine: true
+
+#
+# Alignment
+#
+AlignAfterOpenBracket: BlockIndent
+AlignOperands: DontAlign
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 2
+
+#
+# Parameter / argument packing
+#
+BinPackParameters: false
+BinPackArguments: false
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowAllArgumentsOnNextLine: true
+
+#
+# Constructors / initializers
+#
+PackConstructorInitializers: NextLine
+BreakConstructorInitializers: AfterColon
+
+#
+# Templates / attributes
+#
+BreakTemplateDeclarations: Yes
+BreakAfterAttributes: Never
+
+#
+# Operators / break penalties
+#
+BreakBeforeTernaryOperators: true
+BreakBeforeBinaryOperators: All
+PenaltyReturnTypeOnItsOwnLine: 9999
+
+#
+# Includes
+#
+SortIncludes: true
+
+#
+# Empty lines
+#
+KeepEmptyLines:
+  AtStartOfFile: true
+  AtStartOfBlock: false
+  AtEndOfFile: true
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
